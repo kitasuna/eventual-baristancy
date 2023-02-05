@@ -58,20 +58,22 @@ ent_m = {
             e.vx = 0 
             e.vy = 1
           end
-      else
-        e.frame_time += dt
-        if e.frame_time > _baddie_frame_cycle then
-          e.curr_frame += 1
-          if e.curr_frame > #e.frames then
-            e.curr_frame = 1
-            del(ent_m.ents, e)
-          else
-            e.frame_time = 0
+        else
+          e.frame_time += dt
+          if e.frame_time > _baddie_frame_cycle then
+            e.curr_frame += 1
+            if e.curr_frame > #e.frames then
+              e.curr_frame = 1
+              del(ent_m.ents, e)
+              -- baddie death
+              _year_cycle_time = max(1, _year_cycle_time * 0.9)
+            else
+              e.frame_time = 0
+            end
           end
         end
-      end
-      e.x += e.vx * (_mods.slow_baddies and 0.2 or 1)
-      e.y += e.vy * (_mods.slow_baddies and 0.2 or 1)
+        e.x += e.vx * (_mods.slow_baddies and 0.2 or 1)
+        e.y += e.vy * (_mods.slow_baddies and 0.2 or 1)
       end
     }
     -- setmetatable(e,{__index=1})

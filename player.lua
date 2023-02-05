@@ -2,7 +2,7 @@ _base_vel = 1
 player = {
   x = 58,
   y = 58,
-  health = 0,
+  health = 6,
   ittl = 0,
   collr = 4,
   direction = 0,
@@ -84,6 +84,7 @@ player = {
       if p.health < 0 then
         __draw = defeat_draw
         __update = defeat_update
+        music(-1, 1000)
       end
     end
 
