@@ -46,6 +46,7 @@ powerup = {
     end
   end,
   handle_collision = function(p)
+    sfx(18)
     p.ttl = 3
     p.state = "sleep"
     _mods.slow_baddies = true

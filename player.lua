@@ -73,6 +73,7 @@ player = {
       end
       p.ittl = 2
       p.health -= 1
+      sfx(19)
       if p.health == 0 then
         sword.ttl = 0
       end

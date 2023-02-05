@@ -83,6 +83,7 @@ ent_m = {
     e.state = "dead"
     e.vy = -e.vy
     e.vx = -e.vx 
+    sfx(17)
   end,
 }
 
