@@ -70,8 +70,8 @@ ent_m = {
           end
         end
       end
-      e.x += e.vx
-      e.y += e.vy
+      e.x += e.vx * (_mods.slow_baddies and 0.2 or 1)
+      e.y += e.vy * (_mods.slow_baddies and 0.2 or 1)
       end
     }
     -- setmetatable(e,{__index=1})
@@ -81,8 +81,6 @@ ent_m = {
     e.state = "dead"
     e.vy = -e.vy
     e.vx = -e.vx 
-    printh("vxy: "..e.vx..","..e.vy)
-    -- del(em.ents, e)
   end,
 }
 
