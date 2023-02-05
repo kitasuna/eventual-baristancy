@@ -128,7 +128,7 @@ sword = {
     end
   end,
   fire = function(s)
-    s.ttl = 0.9
+    s.ttl = _sword_cycle_time * 0.9
     s.direction = s.direction == 0 and 1 or 0
   end,
 }

@@ -50,10 +50,10 @@ powerup = {
     p.state = "sleep"
     _mods.slow_baddies = true
     _mods.rand_sword = true
-    add(_mod_timers, {ttl=5, cb = function()
+    add(_mod_timers, {ttl=7, cb = function()
       _mods.slow_baddies = false
       _mods.rand_sword = false
-      _sword_cycle_time = 0.95
+      _sword_cycle_time = 1.5
     end})
   end,
 }
